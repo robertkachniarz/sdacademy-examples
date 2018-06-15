@@ -11,7 +11,7 @@ public class FizzBuzzWhizTest {
 	by commas. Substitute any integer which is divisible by 3 with "Fizz", and any integer which is divisible
 	by 5 with "Buzz", and any integer divisible by 3 and 5 with "FizzBuzz".
 	*/
-	 
+
 	@Test
 	void fizBuzzAndPrime() {
 
@@ -23,6 +23,7 @@ public class FizzBuzzWhizTest {
 
 		//then
 		assertThat(FizzBuzzWhiz.fizzBuzzWhiz(1)).isEqualTo("1");
+		assertThat(FizzBuzzWhiz.fizzBuzzWhiz(2)).isEqualTo("Whiz");
 
 
 
