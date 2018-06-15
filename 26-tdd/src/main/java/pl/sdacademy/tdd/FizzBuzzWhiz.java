@@ -6,6 +6,7 @@ public class FizzBuzzWhiz {
 		if (number == 1) s = "1";
 		else if (number == 2) s = "Whiz";
 		else if (number % 3 == 0) s = "FizzWhiz";
+		else if (number % 5 == 0) s = "BuzzWhiz";
 		else if (number % 2 == 0) s = Integer.toString(number);
 		return s;
 	}
