@@ -25,6 +25,7 @@ public class FizzBuzzWhizTest {
 		assertThat(FizzBuzzWhiz.fizzBuzzWhiz(1)).isEqualTo("1");
 		assertThat(FizzBuzzWhiz.fizzBuzzWhiz(2)).isEqualTo("Whiz");
 		assertThat(FizzBuzzWhiz.fizzBuzzWhiz(3)).isEqualTo("FizzWhiz");
+		assertThat(FizzBuzzWhiz.fizzBuzzWhiz(4)).isEqualTo("4");
 
 
 
