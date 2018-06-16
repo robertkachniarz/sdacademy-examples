@@ -80,6 +80,24 @@ public class FizzBuzzWhizTest {
 		//then
 		assertThat(msg).isEqualTo("Whiz");
 	}
+	@Test
+	void fizBuzzAndPrime8() {
+		//given
+		int n = 8;
+		//when
+		String msg = FizzBuzzWhiz.fizzBuzzWhiz(n);
+		//then
+		assertThat(msg).isEqualTo("8");
+	}
+	@Test
+	void fizBuzzAndPrime15() {
+		//given
+		int n = 15;
+		//when
+		String msg = FizzBuzzWhiz.fizzBuzzWhiz(n);
+		//then
+		assertThat(msg).isEqualTo("FizzBuzz");
+	}
 
 }
 

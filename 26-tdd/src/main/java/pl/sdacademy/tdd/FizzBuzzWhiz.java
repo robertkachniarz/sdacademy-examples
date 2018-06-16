@@ -7,7 +7,10 @@ public class FizzBuzzWhiz {
 		else if (number % 3 == 0 && FizzBuzzWhiz.isPrime(number)) s = "FizzWhiz";
 		else if (number % 5 == 0 && FizzBuzzWhiz.isPrime(number)) s = "BuzzWhiz";
 		else if (!FizzBuzzWhiz.isPrime(number)) {
-			if (number % 3 == 0) {
+			if (number % 15 == 0){
+				s = "FizzBuzz";
+			}
+			else if (number % 3 == 0) {
 				s = "Fizz";
 			}
 			else if (number % 5 == 0) {
