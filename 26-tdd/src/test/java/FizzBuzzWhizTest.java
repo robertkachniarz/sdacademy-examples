@@ -4,7 +4,7 @@ import pl.sdacademy.tdd.FizzBuzzWhiz;
 import static org.assertj.core.api.Assertions.*;
 
 public class FizzBuzzWhizTest {
-	// @DisplayName("jakiś opis");
+
 	/*
 	Same as FizzBuzz but substitute prime numbers with "Whiz"
 	Write some code that will generate a string of integers, starting at 1 and going up to 100, all separated
@@ -13,23 +13,73 @@ public class FizzBuzzWhizTest {
 	*/
 
 	@Test
-	void fizBuzzAndPrime() {
-
+	//@DisplayName("jakiś opis")
+	void fizBuzzAndPrime1() {
 		//given
-		int n = 0;
-
+		int n = 1;
 		//when
-		int number = 0;
-
+		String msg = FizzBuzzWhiz.fizzBuzzWhiz(n);
 		//then
-		assertThat(FizzBuzzWhiz.fizzBuzzWhiz(1)).isEqualTo("1");
-		assertThat(FizzBuzzWhiz.fizzBuzzWhiz(2)).isEqualTo("Whiz");
-		assertThat(FizzBuzzWhiz.fizzBuzzWhiz(3)).isEqualTo("FizzWhiz");
-		assertThat(FizzBuzzWhiz.fizzBuzzWhiz(4)).isEqualTo("4");
-		assertThat(FizzBuzzWhiz.fizzBuzzWhiz(5)).isEqualTo("BuzzWhiz");
-
-
-
+		assertThat(msg).isEqualTo("1");
 	}
+
+	@Test
+	void fizBuzzAndPrime2() {
+		//given
+		int n = 2;
+		//when
+		String msg = FizzBuzzWhiz.fizzBuzzWhiz(n);
+		//then
+		assertThat(msg).isEqualTo("Whiz");
+	}
+
+	@Test
+	void fizBuzzAndPrime3() {
+		//given
+		int n = 3;
+		//when
+		String msg = FizzBuzzWhiz.fizzBuzzWhiz(n);
+		//then
+		assertThat(msg).isEqualTo("FizzWhiz");
+	}
+
+	@Test
+	void fizBuzzAndPrime4() {
+		//given
+		int n = 4;
+		//when
+		String msg = FizzBuzzWhiz.fizzBuzzWhiz(n);
+		//then
+		assertThat(msg).isEqualTo("4");
+	}
+
+	@Test
+	void fizBuzzAndPrime5() {
+		//given
+		int n = 5;
+		//when
+		String msg = FizzBuzzWhiz.fizzBuzzWhiz(n);
+		//then
+		assertThat(msg).isEqualTo("BuzzWhiz");
+	}
+	@Test
+	void fizBuzzAndPrime6() {
+		//given
+		int n = 6;
+		//when
+		String msg = FizzBuzzWhiz.fizzBuzzWhiz(n);
+		//then
+		assertThat(msg).isEqualTo("Fizz");
+	}
+	@Test
+	void fizBuzzAndPrime7() {
+		//given
+		int n = 7;
+		//when
+		String msg = FizzBuzzWhiz.fizzBuzzWhiz(n);
+		//then
+		assertThat(msg).isEqualTo("Whiz");
+	}
+
 }
 
