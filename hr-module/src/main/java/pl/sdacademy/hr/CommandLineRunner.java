@@ -1,5 +1,7 @@
 package pl.sdacademy.hr;
 
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class CommandLineRunner {
@@ -27,5 +29,9 @@ public class CommandLineRunner {
 	private static String extractArgument (String argument, String argumentKey){
 		return argument.split(argumentKey + "=")[1];
 
+	}
+
+	public static List<String> list(HrManager hrManager) {
+		return hrManager.findAll().stream().map(Employee::toString).collect(Collectors.toList());
 	}
 }

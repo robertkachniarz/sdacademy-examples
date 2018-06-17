@@ -3,6 +3,8 @@ package pl.sdacademy.hr;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.*;
 
 class CommandLineRunnerTest {
@@ -89,6 +91,25 @@ class CommandLineRunnerTest {
 		assertThat(employee.getFirstName()).isEqualTo("Jan");
 		assertThat(employee.getLastName()).isEqualTo("Kowalski");
 		assertThat(employee.getDateOfBirth()).isEqualTo("15-09-1995");
+	}
+
+	@DisplayName("Should return list of text representation of all Employees from database")
+	@Test
+	void test05()
+
+	{
+		//given
+		HrManager hrManager = new HrManager();
+		String[] args = {"firstName=Jan", "lastName=Kowalski", "dateOfBirth=15-09-1995"};
+		CommandLineRunner.load(args, hrManager);
+
+		//when
+		List<String> allEmployees = CommandLineRunner.list(hrManager);
+
+		//then
+		Employee employee = hrManager.findAll().get(0);
+		assertThat(allEmployees).containsOnly("Jan Kowalski, 15-09-1995");
+
 	}
 
 
