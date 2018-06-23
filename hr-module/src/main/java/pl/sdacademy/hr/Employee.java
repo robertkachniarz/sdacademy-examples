@@ -24,8 +24,18 @@ class Employee {
 		return dateOfBirth;
 	}
 
+
+
 	@Override
 	public String toString() {
 		return firstName + " " + lastName + ", " + dateOfBirth;
+	}
+
+	public boolean matches(String phrase) {
+
+
+		return firstName.contains(phrase)
+			|| lastName.contains(phrase)
+			|| dateOfBirth.contains(phrase);
 	}
 }
