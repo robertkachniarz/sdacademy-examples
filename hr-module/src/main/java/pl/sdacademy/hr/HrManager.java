@@ -37,8 +37,26 @@ class HrManager {
 
 	public List<Employee> searchByPhrase(String phrase) {
 
-		return allEmployees.stream().filter(employee ->
-			employee.matches(phrase))
-			.collect(Collectors.toList());
+		return allEmployees.stream().filter(employee -> employee.matches(phrase)).collect(Collectors.toList());
+	}
+
+	public List<Employee> sortByFirstName() {
+		/*return allEmployees.stream().sorted(Comparator.comparing(Employee::getFirstName)).collect(Collectors
+			.toList()); */
+		// return allEmployees.stream().sorted().collect(Collectors.toList());
+
+		int n = allEmployees.size();
+		for (int i = 0; i < n-1; i++)
+			for (int j = 0; j < n-i-1; j++)
+				if (allEmployees.get(j).getFirstName().compareTo(allEmployees.get(j+1).getFirstName()
+				) > 0)
+				{
+					// swap temp and arr[i]
+					Employee temp = allEmployees.get(j);
+					allEmployees.set(j, allEmployees.get(j+1));
+					allEmployees.set(j+1,temp);
+				}
+		System.out.println(allEmployees);
+		return allEmployees;
 	}
 }
