@@ -73,8 +73,6 @@ public class SwingView {
 	}
 	private static void addSecondRow(JFrame jFrame) {
 
-
-
 		JTable table = new JTable(tableModel);
 		JScrollPane scrollPane = new JScrollPane(table);
 		jFrame.add(scrollPane);
