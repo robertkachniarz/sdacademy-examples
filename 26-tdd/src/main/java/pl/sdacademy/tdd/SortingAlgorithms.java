@@ -16,7 +16,7 @@ public class SortingAlgorithms {
 	public static int[] quickSort(int[] arr){
 
 
-		return null;
+		return arr;
 	}
 
 }

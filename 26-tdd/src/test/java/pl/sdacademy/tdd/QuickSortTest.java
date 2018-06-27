@@ -17,4 +17,15 @@ public class QuickSortTest {
 		//then
 		assertThat(resultArray).isNull();
 	}
+
+	@DisplayName("Should return null when given is array arr")
+	@Test
+	void quickSortTest2(){
+		//given
+		int[] arr = {0};
+		//when
+		int[] resultArray = SortingAlgorithms.quickSort(arr);
+		//then
+		assertThat(resultArray).isNotEmpty();
+	}
 }
