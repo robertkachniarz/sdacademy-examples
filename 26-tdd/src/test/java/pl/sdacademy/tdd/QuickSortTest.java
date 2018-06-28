@@ -15,7 +15,7 @@ public class QuickSortTest {
 		//when
 		int[] resultArray = SortingAlgorithms.quickSort(arr);
 		//then
-		assertThat(resultArray).isNull();
+		assertThat(resultArray).isEmpty();
 	}
 
 	@DisplayName("Should return not null array when given is array with one element")
@@ -34,6 +34,17 @@ public class QuickSortTest {
 	void quickSortTest3(){
 		//given
 		int[] arr = {0, 1};
+		//when
+		int[] resultArray = SortingAlgorithms.quickSort(arr);
+		//then
+		assertThat(resultArray).isSorted();
+	}
+
+	@DisplayName("Should return sorted array when given is unsorted array with two numbers")
+	@Test
+	void quickSortTest4(){
+		//given
+		int[] arr = {1, 0};
 		//when
 		int[] resultArray = SortingAlgorithms.quickSort(arr);
 		//then
