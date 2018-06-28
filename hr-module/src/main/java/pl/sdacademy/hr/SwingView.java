@@ -22,7 +22,7 @@ public class SwingView {
 			public void run() {
 				// prepare the jframe
 				final JFrame jFrame = new JFrame();
-				LayoutManager layout = new GridLayout(3, 1);
+				LayoutManager layout = new GridLayout(4, 1);
 				jFrame.setLayout(layout);
 				jFrame.setTitle("HrManager");
 				jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -31,6 +31,7 @@ public class SwingView {
 				addFirstRow(jFrame);
 				addSecondRow(jFrame);
 				addThirdRow(jFrame);
+				addFourthRow(jFrame);
 
 
 				// pack and show
@@ -86,18 +87,42 @@ public class SwingView {
 		row.setLayout(layout);
 
 		row.add(new JLabel("Filters"));
+		JButton okButton = new JButton("OK");
 		JPanel lastNameFilter = new JPanel();
 		lastNameFilter.add(new JLabel("Last Name"));
-		lastNameFilter.add(new JTextField("lastName"));
-		lastNameFilter.add(new JButton("OK"));
+		JTextField lastNameField = new JTextField("lastname");
+		lastNameFilter.add(lastNameField);
+		lastNameFilter.add(okButton);
+
+		okButton.addActionListener(e -> {
+			adapter.searchByLastNameFilter(tableModel, lastNameField.getText());
+		});
+
 		lastNameFilter.setAlignmentX(0);
 		row.add(lastNameFilter);
 
 		JPanel phraseFilter = new JPanel();
+		JButton phraseOkButton = new JButton("OK");
+		JTextField phrase = new JTextField("Phrase");
 		phraseFilter.add(new JLabel("Phrase"));
-		phraseFilter.add(new JTextField("phrase"));
-		phraseFilter.add(new JButton("OK"));
+		phraseFilter.add(phrase);
+		phraseFilter.add(phraseOkButton);
+		phraseOkButton.addActionListener(e -> {adapter.searchByPhraseFilter(tableModel, phrase.getText());});
 		row.add(phraseFilter);
+
+		jFrame.add(row);
+
+	}
+	private static void addFourthRow(JFrame jFrame) {
+
+		JPanel row = new JPanel();
+		JButton clearButton = new JButton("Clear Filters");
+		row.add(clearButton);
+		clearButton.addActionListener(e -> {
+			adapter.clearFilters(tableModel);
+		});
+
+
 
 		jFrame.add(row);
 
