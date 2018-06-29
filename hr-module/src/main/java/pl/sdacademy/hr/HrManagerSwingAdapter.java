@@ -42,5 +42,22 @@ public class HrManagerSwingAdapter {
 	}
 
 
+	public void sortByFirstName(DefaultTableModel tableModel) {
+		tableModel.getDataVector().clear();
+		List<Employee> allEmployees = hrManager.sortByFirstName();
+		for (Employee employee : allEmployees){
+			tableModel.addRow(new Object[]{employee.getFirstName(), employee.getLastName(), employee
+				.getDateOfBirth()});
+		}
+	}
+
+	public void sortByLastName(DefaultTableModel tableModel) {
+		tableModel.getDataVector().clear();
+		List<Employee> allEmployees = hrManager.sortByLastName();
+		for (Employee employee : allEmployees){
+			tableModel.addRow(new Object[]{employee.getFirstName(), employee.getLastName(), employee
+				.getDateOfBirth()});
+		}
+	}
 }
 

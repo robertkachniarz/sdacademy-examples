@@ -22,7 +22,7 @@ public class SwingView {
 			public void run() {
 				// prepare the jframe
 				final JFrame jFrame = new JFrame();
-				LayoutManager layout = new GridLayout(4, 1);
+				LayoutManager layout = new GridLayout(5, 1);
 				jFrame.setLayout(layout);
 				jFrame.setTitle("HrManager");
 				jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -32,6 +32,7 @@ public class SwingView {
 				addSecondRow(jFrame);
 				addThirdRow(jFrame);
 				addFourthRow(jFrame);
+				addFifthRow(jFrame);
 
 
 				// pack and show
@@ -123,6 +124,24 @@ public class SwingView {
 		});
 
 
+
+		jFrame.add(row);
+
+	}
+
+	private static void addFifthRow(JFrame jFrame) {
+
+		JPanel row = new JPanel();
+		JButton sortByFirstNameButton = new JButton("Sort by first name");
+		JButton sortByLastNameButton = new JButton("Sort by last name");
+		row.add(sortByFirstNameButton);
+		row.add(sortByLastNameButton);
+		sortByFirstNameButton.addActionListener(e -> {
+			adapter.sortByFirstName(tableModel);
+		});
+		sortByLastNameButton.addActionListener(e -> {
+			adapter.sortByLastName(tableModel);
+		});
 
 		jFrame.add(row);
 
