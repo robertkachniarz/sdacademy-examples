@@ -187,16 +187,18 @@ class HrManagerTest {
 	void test10(){
 		//given
 		Employee jan = hrManager.create("Jan", "Kowalski", "01-10-1980");
-		Employee zenon = hrManager.create("Zenon", "Kowalski", "01-10-1970");
+		Employee zenon = hrManager.create("Zenon", "Iksiński", "01-10-1970");
 		Employee marianNowak = hrManager.create("Marian", "Nowak", "21-05-1970");
+		Employee annaJakowska = hrManager.create("Anna", "Jakowska", "01-05-1994");
 
 		//Employee marianKowalski = hrManager.create("Marian", "Iksiński", "21-10-1975");
 
 		//when
-		List<Employee> sortEmployees = hrManager.sortByFirstName();
+		//List<Employee> sortEmployees = hrManager.sortByFirstName();
+		List<Employee> sortEmployees = hrManager.sortByLastName();
 
 		//then
-		assertThat(sortEmployees).containsExactly(jan, marianNowak, zenon);
+		assertThat(sortEmployees).containsExactly(zenon, annaJakowska, jan, marianNowak);
 
 	}
 
