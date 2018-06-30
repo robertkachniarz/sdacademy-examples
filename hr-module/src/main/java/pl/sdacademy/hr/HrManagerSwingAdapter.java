@@ -14,6 +14,13 @@ public class HrManagerSwingAdapter {
 		Employee newEmployee = hrManager.create(firstName, lastName, dateOfBirth);
 		tableModel.addRow(new Object[]{newEmployee.getFirstName(), newEmployee.getLastName(), newEmployee.getDateOfBirth()});
 	}
+
+	public void loadAllEmployeesFromFile(DefaultTableModel tableModel){
+		List<Employee> allEmployees = hrManager.findAll();
+		tableModel.getDataVector().clear();
+		fillAllRows(tableModel, allEmployees);
+	}
+
 	public void searchByLastNameFilter(DefaultTableModel tableModel, String lastName){
 		List<Employee> searchedEmployees = hrManager.searchByLastName(lastName);
 		tableModel.getDataVector().clear();

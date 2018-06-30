@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 class HrManager {
 	List<Employee> allEmployees = new ArrayList<>();
-	private static final Path PATH = Paths.get("employees.txt");
+	private static final Path PATH = Paths.get("hr-module/employees.txt");
 
 	Employee create(String firstName, String lastName, String dateOfBirth) {
 		Employee employee = new Employee(firstName, lastName, dateOfBirth);
@@ -28,7 +28,7 @@ class HrManager {
 
 	public List<Employee> findAll() {
 		try {
-			Files.readAllLines(PATH).stream().map((line)->{
+			allEmployees = Files.readAllLines(PATH).stream().map((line)->{
 				String[] splitLine = line.split(" ");
 				Employee employee = new Employee(splitLine[0], splitLine[1], splitLine[2]);
 				return employee;

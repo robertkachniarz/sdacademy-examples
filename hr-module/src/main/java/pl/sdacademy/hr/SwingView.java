@@ -3,6 +3,8 @@ package pl.sdacademy.hr;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 
 public class SwingView {
 	private static final HrManagerSwingAdapter adapter = new HrManagerSwingAdapter(new HrManager());
@@ -23,10 +25,35 @@ public class SwingView {
 			public void run() {
 				// prepare the jframe
 				final JFrame jFrame = new JFrame();
-				LayoutManager layout = new GridLayout(5, 1);
+				LayoutManager layout = new GridLayout(6, 1);
 				jFrame.setLayout(layout);
 				jFrame.setTitle("HrManager");
 				jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+
+				// menuBar
+				JMenuBar menuBar = new JMenuBar();
+
+				//Build the first menu.
+				JMenu menu = new JMenu("File");
+				menu.setMnemonic(KeyEvent.VK_A);
+				menu.getAccessibleContext().setAccessibleDescription(
+					"Menu File");
+				menuBar.add(menu);
+
+				//a group of JMenuItems
+				JMenuItem menuItem = new JMenuItem("Load employees",
+					KeyEvent.VK_T);
+				menuItem.setAccelerator(KeyStroke.getKeyStroke(
+					KeyEvent.VK_1, ActionEvent.ALT_MASK));
+				menuItem.getAccessibleContext().setAccessibleDescription(
+					"Load all employees from file");
+				menuItem.addActionListener(e -> {
+					adapter.loadAllEmployeesFromFile(tableModel);
+				});
+				menu.add(menuItem);
+
+				jFrame.add(menuBar);
 
 				// content
 				addFirstRow(jFrame);
