@@ -1,5 +1,7 @@
 package pl.sdacademy.hr;
 
+import java.util.Objects;
+
 class Employee implements Comparable<Employee>{
 	private final String firstName;
 	private final String lastName;
@@ -28,7 +30,7 @@ class Employee implements Comparable<Employee>{
 
 	@Override
 	public String toString() {
-		return firstName + " " + lastName + ", " + dateOfBirth;
+		return firstName + " " + lastName + " " + dateOfBirth;
 	}
 
 	public boolean matches(String phrase) {
@@ -41,5 +43,24 @@ class Employee implements Comparable<Employee>{
 	public int compareTo(Employee other) {
 
 		return firstName.compareTo(other.firstName);
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (o == null || getClass() != o.getClass()) {
+			return false;
+		}
+		Employee employee = (Employee) o;
+		return Objects.equals(firstName, employee.firstName) && Objects.equals(lastName, employee.lastName) &&
+			Objects.equals(dateOfBirth, employee.dateOfBirth);
+	}
+
+	@Override
+	public int hashCode() {
+
+		return Objects.hash(firstName, lastName, dateOfBirth);
 	}
 }
