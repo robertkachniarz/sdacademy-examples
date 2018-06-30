@@ -67,7 +67,6 @@ class HrManager {
 		//QuickSort
 		quickSort(allEmployees, 0, allEmployees.size() - 1);
 
-
 		return allEmployees;
 	}
 

@@ -182,7 +182,7 @@ class HrManagerTest {
 
 	}
 
-	@DisplayName("Should sort by first name ascending")
+	@DisplayName("Should sort by last name ascending")
 	@Test
 	void test10(){
 		//given

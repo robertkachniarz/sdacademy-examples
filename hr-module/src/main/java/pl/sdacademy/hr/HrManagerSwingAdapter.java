@@ -35,25 +35,22 @@ public class HrManagerSwingAdapter {
 	public void clearFilters(DefaultTableModel tableModel){
 		tableModel.getDataVector().clear();
 		List<Employee> allEmployees = hrManager.findAll();
-		for (Employee employee : allEmployees){
-			tableModel.addRow(new Object[]{employee.getFirstName(), employee.getLastName(), employee
-				.getDateOfBirth()});
-		}
+		fillAllRows(tableModel, allEmployees);
 	}
 
 
 	public void sortByFirstName(DefaultTableModel tableModel) {
 		tableModel.getDataVector().clear();
 		List<Employee> allEmployees = hrManager.sortByFirstName();
-		for (Employee employee : allEmployees){
-			tableModel.addRow(new Object[]{employee.getFirstName(), employee.getLastName(), employee
-				.getDateOfBirth()});
-		}
+		fillAllRows(tableModel, allEmployees);
 	}
 
 	public void sortByLastName(DefaultTableModel tableModel) {
 		tableModel.getDataVector().clear();
 		List<Employee> allEmployees = hrManager.sortByLastName();
+		fillAllRows(tableModel, allEmployees);
+	}
+	public  void fillAllRows(DefaultTableModel tableModel, List<Employee> allEmployees){
 		for (Employee employee : allEmployees){
 			tableModel.addRow(new Object[]{employee.getFirstName(), employee.getLastName(), employee
 				.getDateOfBirth()});
