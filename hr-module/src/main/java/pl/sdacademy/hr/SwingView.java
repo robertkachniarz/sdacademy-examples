@@ -24,7 +24,7 @@ public class SwingView {
 			@Override
 			public void run() {
 				// prepare the jframe
-				final JFrame jFrame = new JFrame();
+				JFrame jFrame = new JFrame();
 				LayoutManager layout = new GridLayout(6, 1);
 				jFrame.setLayout(layout);
 				jFrame.setTitle("HrManager");
@@ -33,6 +33,7 @@ public class SwingView {
 
 				// menuBar
 				JMenuBar menuBar = new JMenuBar();
+
 
 				//Build the first menu.
 				JMenu menu = new JMenu("File");

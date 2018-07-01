@@ -20,7 +20,10 @@ public class Fibonacci {
 
 	public static void fibonacciString (int index){
 		for (int i = 0; i <= index; i++){
+			Long start = System.currentTimeMillis();
 			System.out.println("F" + i + "=>" + fibonacciNumberOfString(i));
+			Long end = System.currentTimeMillis();
+			System.out.println("Elapsed time: " + (end - start));
 		}
 	}
 }
