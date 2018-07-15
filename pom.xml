@@ -42,6 +42,8 @@
 		<module>32_wzorzec-projektowy-proxy-pattern</module>
 		<module>33_wzorzec-projektowy-interpreter</module>
 		<module>34_wzorzec-projektowy-mediator</module>
+		<module>35_wzorzec-projektowy-stan</module>
+		<module>36_wzorzec-projektowy-strategia</module>
 	</modules>
 	<packaging>pom</packaging>
 	<name>sdacademy-examples</name>
