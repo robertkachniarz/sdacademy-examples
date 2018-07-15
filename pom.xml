@@ -36,6 +36,10 @@
 		<module>27-algorithms</module>
 		<module>28-printer</module>
 		<module>29-vat</module>
+		<module>30_wzorce_projektowe</module>
+		<module>31_wzorce-projektowe-most</module>
+		<module>31_wzorzec-projektowy-proxy-pattern</module>
+		<module>32_wzorzec-projektowy-proxy-pattern</module>
 	</modules>
 	<packaging>pom</packaging>
 	<name>sdacademy-examples</name>
@@ -57,6 +61,12 @@
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.0</version>
+			<scope>provided</scope>
+		</dependency>
 		<!-- JUnit Jupiter dependencies -->
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
