@@ -40,6 +40,8 @@
 		<module>31_wzorce-projektowe-most</module>
 		<module>31_wzorzec-projektowy-proxy-pattern</module>
 		<module>32_wzorzec-projektowy-proxy-pattern</module>
+		<module>33_wzorzec-projektowy-interpreter</module>
+		<module>34_wzorzec-projektowy-mediator</module>
 	</modules>
 	<packaging>pom</packaging>
 	<name>sdacademy-examples</name>
